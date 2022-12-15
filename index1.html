@@ -25,37 +25,21 @@
 
       <div class ="container">
         <div class="row">
-            <div class="col">
-                Kolom 1
-            </div>
-            <div class="col">
-                Kolom 2</div>
+            <div class="col"> Kolom 1 </div>
+            <div class="col"> Kolom 2 </div>
         </div>
         <div class="row">
-            <div class="col" >
-                Kolom 1
+            <div class="col"> Kolom 1
             </div>
-           
         </div>
         <div class="row">
-            <div class="col">
-                Kolom 1
-            </div>
-            <div class="col">
-                Kolom 2
-            </div>
-            
+            <div class="col"> Kolom 1 </div>
+            <div class="col"> Kolom 2 </div>
         </div>
         <div class="row">
-            <div class="col" >
-                Kolom 1
-            </div>
-            <div class="col">
-                Kolom 2
-            </div>
-                <div class="col" >
-                    Kolom 3
-                </div>
+            <div class="col"> Kolom 1 </div>
+            <div class="col"> Kolom 2 </div>
+            <div class="col"> Kolom 3 </div>
         </div>
       </div>
 
@@ -64,32 +48,56 @@
 
       <div class="container mt-5">
         <div class="row">
-      <div class="col-12 col-md-4">
-        Kolom 1
+      <div class="col-12 col-md-4"> Kolom 1 </div>
+      <div class="col-12 col-md-4"> Kolom 2 </div>
+      <div class="col-12 col-md-4"> Kolom 3 </div>
         </div>
-      <div class="col-12 col-md-4">
-        Kolom 2
-        </div>
-      <div class="col-12 col-md-4">
-        Kolom 3
-        </div>
+    <div class="row">
+      <div class="col-12 col-md-4"> Kolom 1 </div>
       </div>
-      <div class=" col-md-5">
-        Kolom 1
-        </div>
-        <div class="col-6 col-md-5">
-        Kolom 1
-        </div>
-        <div class="col-6 col-md-2">
-            Kolom 2
-        </div>
-        <div class="col-6 col-md-3">
-            Kolom 3
-        </div>
-        <div class="col-6 col-md-3">
-            Kolom 4
-        </div>
+      <div class="row">
+        <div class="col-6 col-md-3"> Kolom 1 </div>
+        <div class="col-6 col-md-3"> Kolom 2 </div>
+        <div class="col-6 col-md-3"> Kolom 3 </div>
+        <div class="col-6 col-md-3"> Kolom 4 </div>
     </div>
+
+    <script>
+        <span id = "cat-fact"></span>
+        <div></div>
+        <span id = "cat-fact2"></span>
+
+        // Named function
+        function handleResponse(response){
+
+        }
+        // Anonymous function
+        response => {
+
+        }
+        
+        fetch('https://catfact.ninja/fact')
+        .then(response => response.json())
+        .then(data => {
+        // Daadwerkelijk data van url
+        console.log(data.fact)
+        var span = document.getElementById('cat-fact');
+        span.textContent = data.fact;
+        }
+
+        fetch('https://catfact.ninja/fact')
+        .then(response => response.json())
+        .then(data => {
+        // Daadwerkelijk data van url
+        console.log(data.fact)
+        var span = document.getElementById('cat-fact2');
+        span.textContent = data.fact;
+        }
+
+        console.log(data.fact);
+       
+
+    </script>
 
     
 </body>
