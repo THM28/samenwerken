@@ -203,12 +203,15 @@
         <div class="col-6 col-md-3"> Kolom 4 </div>
       </div>
     </div>
+    
 
 <span id="cat-fact"></span>
 <span id="cat-fact2"></span>
 <span id="cat-fact3"></span>
 
-<div class="container id="test"></div>
+<div class="container">
+  <div class="row" id="test"></div>
+</div>
 
 <script>
 
@@ -239,35 +242,34 @@
   // handle any errors here
 });
 
-// Named function 
-function handleResponse (response) {
 
-}
+ // Named function
+ function handleResponse(response) {
 
-// Unnamed function
-response => {
+ }
 
-}
+ // Anonymous function
+ response => {
 
-let test = document.getElementById('test');
+ }
 
-  fetch('https://catfact.ninja/facts')
-  .then(response => response.json())
-  .then(lijst => {
-    // Daadwerkelijke data van de url
-    console.log(lijst);
+ let test = document.getElementById('test');
 
-    for (let d of lijst.data){
-      test.innerHTML += " <div class='card'><div class='card-body'>" + d.fact + "</div></div>"
-    }
+ fetch('https://catfact.ninja/facts').then(response => response.json()).then(lijst => {
+     // Daadwerkelijk data van die url
+     console.log('Data = ', lijst);
 
-  })
-  
-  .catch(err => {
-    alert('Url kon niet worden aangeroepen. Reden is ' + err);
-  })
+     alert(lijst.data.length);
 
-  console.log('Na de call');
+     for (let d of lijst.data) {
+         test.innerHTML += "<div class='col-12 col-md-4'><div class='card'><div class='card-body'>" + d.fact + "</div></div></div>"
+     }
+ }).catch(err => {
+     alert('Url kon niet worden aangeroepen. Reden is ' + err);
+ })
+
+ console.log('Na de call');
+
 
 </script>
     
